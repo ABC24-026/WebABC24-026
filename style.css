@@ -544,6 +544,23 @@ footer {
   padding: 0 5%;
 }
 
+.menu-content {
+    display: none;
+}
+
+.menu-content.active {
+    display: block;
+}
+
+.menu-tab {
+    cursor: pointer;
+}
+
+.menu-tab.active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
 .menu-tabs {
   display: flex;
   justify-content: center;
