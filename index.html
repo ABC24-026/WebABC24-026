@@ -145,6 +145,23 @@
             <p>&copy; 2025 ★M'Café. All rights reserved.</p>
         </div>
     </footer>
+ <script>
+      
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+       
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onerror = function() {
+                    this.src = 'images/placeholder.jpg';
+                    this.alt = 'Image not available';
+                };
+            });
+        });
+    </script>
 
 
 </body>
