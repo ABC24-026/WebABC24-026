@@ -172,6 +172,30 @@
             <p>&copy; 2025 ★M'Café. All rights reserved.</p>
         </div>
     </footer>
+    
+    <script>
+       
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+      
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+               
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+               
+                this.classList.add('active');
+             
+                const filter = this.getAttribute('data-filter');
+               
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                });
+ </script>    
 </body>
 </html>
 
