@@ -24,6 +24,11 @@ body {
   color: var(--text-color);
   background-color: var(--light-color);
 }
+video {
+  max-width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
