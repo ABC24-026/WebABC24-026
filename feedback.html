@@ -165,6 +165,94 @@
             </div>
         </form>
     </section>
+ <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const navMenu = document.querySelector('nav ul');
+  
+ 
+  mobileMenuToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('show');
+  });
+  
+
+  document.addEventListener('click', function(event) {
+    const isClickInsideMenu = navMenu.contains(event.target);
+    const isClickOnToggle = mobileMenuToggle.contains(event.target);
+    
+    if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('show')) {
+      navMenu.classList.remove('show');
+    }
+  });
+  
+  const menuTabs = document.querySelectorAll('.menu-tab');
+  if (menuTabs.length > 0) {
+    menuTabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+      
+        menuTabs.forEach(t => t.classList.remove('active'));
+        
+
+        this.classList.add('active');
+        
+        document.querySelectorAll('.menu-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        
+    
+        const tabId = this.getAttribute('data-tab');
+        const targetMenu = document.getElementById(tabId + '-menu');
+        if (targetMenu) {
+          targetMenu.classList.add('active');
+        }
+      });
+    });
+  }
+  
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  if (filterBtns.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+       
+        filterBtns.forEach(b => b.classList.remove('active'));
+        
+        this.classList.add('active');
+       
+        const filter = this.getAttribute('data-filter');
+     
+        document.querySelectorAll('.gallery-item').forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+  
+
+  const images = document.querySelectorAll('img');
+  images.forEach(img => {
+    img.onerror = function() {
+      this.src = 'images/placeholder.jpg';
+      this.alt = 'Image not available';
+    };
+  });
+ 
+  function setVH() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+  
+  setVH();
+  window.addEventListener('resize', setVH);
+});
+      
+    </script>
+
+    
 </body>
 </html>
 
