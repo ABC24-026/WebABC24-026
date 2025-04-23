@@ -1189,3 +1189,208 @@ footer {
   background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
 
 }
+
+
+.nav-active {
+  display: block;
+}
+
+nav ul {
+  display: flex;
+}
+
+@media screen and (max-width: 992px) {
+  .features,
+  .product-grid,
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature, 
+  .product {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-section {
+    margin-bottom: 2rem;
+    text-align: center;
+    min-width: 100%;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .logo {
+    margin-bottom: 1rem;
+  }
+  
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  nav ul.show {
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .gallery-grid,
+  .instagram-grid,
+  .team-grid,
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonials-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu-tabs,
+  .gallery-filter {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .menu-tab,
+  .filter-btn {
+    width: 80%;
+  }
+  
+  .menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .price {
+    margin-top: 0.5rem;
+  }
+  
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .about-image {
+    margin-bottom: 2rem;
+    order: -1;
+  }
+  
+  .journey-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .journey-timeline::before {
+    display: none;
+  }
+  
+  .journey-icon {
+    margin-bottom: 1.5rem;
+  }
+  
+  .testimonial-author {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .platform-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .platform {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .feedback-form {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 4rem 5%;
+  }
+  
+  .banner-content h2 {
+    font-size: 2rem;
+  }
+  
+  .feature, 
+  .product {
+    min-width: auto;
+  }
+  
+  .btn {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  section {
+    padding: 2rem 0;
+  }
+  
+  .footer-content {
+    gap: 1rem;
+  }
+  
+  .footer-section {
+    padding: 0 1rem;
+  }
+}
+
+
+.menu-content {
+  display: none;
+}
+
+.menu-content.active {
+  display: block;
+}
+
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--light-color);
+    width: 100%;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+  }
+}
